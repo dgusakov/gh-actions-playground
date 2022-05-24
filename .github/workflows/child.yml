@@ -1,0 +1,13 @@
+name: Print secrets >_<
+
+on: 
+  workflow_call:
+
+jobs:
+  anti-security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print secret
+        run: echo $SECRET
+        env:
+          SECRET: ${{ secrets.AMAZING_SECRET }}

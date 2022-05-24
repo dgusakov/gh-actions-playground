@@ -1,0 +1,12 @@
+name: Source action that triggers others
+
+on: 
+  push:
+
+jobs:
+  no-inherit:
+    uses: ./.github/workflows/child.yml
+  
+  inherit-secrets:
+    uses: ./.github/workflows/child.yml
+    secrets: inherit
